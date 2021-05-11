@@ -3,10 +3,12 @@ call plug#begin('$VIMRUNTIME/../pluged')
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'vim-scripts/mark'
+Plug 'bling/vim-bufferline'
+Plug 'vim-airline/vim-airline'
 "Plug 'vim-scripts/taglist.vim'
 "Plug 'universal-ctags/ctags'
 "Plug 'ludovicchabant/vim-gutentags'
-"Plug 'vim-scripts/mark'
 "Plug 'kshenoy/vim-signature'
 "Plug 'vim-scripts/gtags.vim'
 "Plug 'vim-scripts/The-NERD-tree'
@@ -39,6 +41,17 @@ let Tlist_WinWidth = 30          " taglist窗口的宽度
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
 let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bling/vim-bufferline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:bufferline_echo = 0
+let g:bufferline_rotate = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline/vim-airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gtags 搜索

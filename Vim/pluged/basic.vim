@@ -16,7 +16,8 @@ endif
 
 "主题默认
 "colorscheme default
-colorscheme desert
+"colorscheme desert
+colorscheme morning
 "背景色
 "set background=dark
 
@@ -51,7 +52,7 @@ au FocusGained,BufEnter * checktime
 
 "设置 leader 键
 let mapleader = ","
-"设置光标定格空2行
+"设置光标顶格空2行
 set so=2
 
 "中文视窗操作系统避免出现乱码
@@ -152,11 +153,6 @@ set laststatus=2
 noremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 "文档转换为 unix格式
 noremap <leader>tu :set fileformat=unix
-"粘贴模式
-map <leader>tp :setlocal paste!<cr>
-" 粘贴 y 复制的内容, 既 0 寄存器内容
-noremap <leader>p "0p
-noremap <leader>P "0P
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
