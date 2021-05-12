@@ -8,6 +8,7 @@ if (g:system == 'window')
     Plug 'bling/vim-bufferline'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-scripts/taglist.vim'
     call plug#end()
 else
     call plug#begin('~/.vim/cvim/plugged/')
@@ -18,6 +19,7 @@ else
     Plug 'bling/vim-bufferline'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-scripts/taglist.vim'
     call plug#end()
 endif
 
@@ -45,7 +47,7 @@ let Tlist_WinWidth = 30          " taglist窗口的宽度
 " BufExplorer 缓冲文件列表
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
-let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+let g:bufExplorerSortBy='number'     " Sort by number.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,6 +63,16 @@ let g:bufferline_fixed_index = 0
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline/vim-airline-themes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_theme='fruit_punch'
+let g:airline_minimalist_showmod = 1
+let g:airline_molokai_bright = 1
+"let g:airline_statusline_ontop = 1     "强制状态行在最上面显示
+"set stl=%!airline#check_mode(winnr())  "禁止tab标签功能, 否则域状态行冲突
+"let g:airline#extensions#tabline#enabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gtags 搜索
@@ -84,7 +96,7 @@ function! FindProjectPath()
         let dir = fnamemodify(dir, ":h")
         let idx += 1
         if idx > 32
-            "echo "FindProjectPath(...) 'idx > 64'"
+            "echo "FindProjectPath(...) 'idx > 32'"
             return ''
         endif
     endwhile

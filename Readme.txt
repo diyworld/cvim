@@ -6,3 +6,10 @@
 4）拷贝 plug.vim 到目录 <xxx\Vim\autoload>
 5）bingo
 
+【文件说明】
+basic.vim 基本配置
+mapbasic.vim 基本映射
+plug.vim 插件管理器，需要放到autoload目录下
+plugin.vim 插件基本配置
+vimrc vim软件配置入口
+

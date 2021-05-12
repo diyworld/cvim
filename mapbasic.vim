@@ -73,6 +73,8 @@ nnoremap ff :new<CR>
 "跳到上一个/下一个历史文件
 nnoremap fn :bn<CR>
 nnoremap fp :bp<CR>
+nnoremap <TAB> :bn<CR>
+nnoremap <S-TAB> :bp<CR>
 "分割窗口, 退出窗口
 nnoremap fs :sp<CR>
 nnoremap fv :vsp<CR>
