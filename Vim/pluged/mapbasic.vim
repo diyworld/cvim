@@ -70,6 +70,12 @@ nnoremap fq :q<CR>
 "目录列表和函数标签
 nnoremap fl :NERDTreeToggle %<CR>
 nnoremap fh :Tlist %<CR>
+"标签
+nnoremap tt :tabnew<CR>
+nnoremap tc :tabclose<CR>
+nnoremap tv :tab vsplit<CR>
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprev<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 跳转

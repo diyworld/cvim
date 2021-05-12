@@ -6,6 +6,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'vim-scripts/mark'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'vim-scripts/taglist.vim'
 "Plug 'universal-ctags/ctags'
 "Plug 'ludovicchabant/vim-gutentags'
@@ -48,10 +49,14 @@ let g:bufExplorerShowRelativePath=1  " Show relative paths.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:bufferline_echo = 0
 let g:bufferline_rotate = 0
+let g:bufferline_fixed_index = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline/vim-airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gtags 搜索
