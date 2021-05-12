@@ -1,21 +1,25 @@
 " 插件安装声明
-call plug#begin('$VIMRUNTIME/../pluged')
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'vim-scripts/mark'
-Plug 'bling/vim-bufferline'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'vim-scripts/taglist.vim'
-"Plug 'universal-ctags/ctags'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'kshenoy/vim-signature'
-"Plug 'vim-scripts/gtags.vim'
-"Plug 'vim-scripts/The-NERD-tree'
-"Plug 'ConradIrwin/vim-bracketed-paste'
-"Plug 'mileszs/ack.vim'
-call plug#end()
+if (g:system == 'window')
+    call plug#begin('$VIMRUNTIME/../cvim/pluged')
+    Plug 'itchyny/lightline.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jlanzarotta/bufexplorer'
+    Plug 'vim-scripts/mark'
+    Plug 'bling/vim-bufferline'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    call plug#end()
+else
+    call plug#begin('~/.vim/cvim/plugged/')
+    Plug 'itchyny/lightline.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'jlanzarotta/bufexplorer'
+    Plug 'vim-scripts/mark'
+    Plug 'bling/vim-bufferline'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    call plug#end()
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree 目录树

@@ -17,7 +17,11 @@ endif
 "主题默认
 "colorscheme default
 "colorscheme desert
-colorscheme morning
+if (g:system == 'window')
+    colorscheme morning
+else
+    colorscheme default
+endif
 "背景色
 "set background=dark
 
@@ -50,8 +54,6 @@ set autoread
 "checktime 检查文件是否被改变
 au FocusGained,BufEnter * checktime
 
-"设置 leader 键
-let mapleader = ","
 "设置光标顶格空2行
 set so=2
 
@@ -148,11 +150,6 @@ xnoremap >  >gv
 set laststatus=2
 "格式化状态行
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-"移除 ^M
-noremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-"文档转换为 unix格式
-noremap <leader>tu :set fileformat=unix
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

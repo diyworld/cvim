@@ -1,5 +1,15 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" other
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"设置 leader 键
+let mapleader = ","
+"移除 ^M
+noremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+"文档转换为 unix格式
+noremap <leader>tu :set fileformat=unix
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 光标移动
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "多行, 多字符移动
@@ -70,12 +80,14 @@ nnoremap fq :q<CR>
 "目录列表和函数标签
 nnoremap fl :NERDTreeToggle %<CR>
 nnoremap fh :Tlist %<CR>
-"标签
-nnoremap tt :tabnew<CR>
+"标签页管理
+nnoremap tw :tabnew<CR>
 nnoremap tc :tabclose<CR>
-nnoremap tv :tab vsplit<CR>
+nnoremap tt :tab vsplit<CR>
 nnoremap tn :tabnext<CR>
+nnoremap <C-t> :tabnext<CR>
 nnoremap tp :tabprev<CR>
+nnoremap T :tabprev<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 跳转
