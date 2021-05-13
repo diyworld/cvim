@@ -2,6 +2,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 窗口基本风格
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"高亮光标所在的行/列
+set cursorline
+set cursorcolumn
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+
 "去除vi一致性
 set nocompatible
 
@@ -132,6 +138,9 @@ set linebreak
 set textwidth=500
 "超过窗口的文本会进行回绕
 set wrap
+
+"最左边空一格
+"set foldcolumn=1
 
 "??
 "set si

@@ -3,11 +3,14 @@
 " other
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "设置 leader 键
-let mapleader = ","
+let mapleader = ";"
 "移除 ^M
-noremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+"nnoremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>'tzt'm
 "文档转换为 unix格式
-noremap <leader>tu :set fileformat=unix
+nnoremap <leader>tu :set fileformat=unix
+"新增一行空白行
+nnoremap <leader>o oi<BS><Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 光标移动
@@ -22,14 +25,14 @@ vnoremap <S-j> 8j
 vnoremap <S-h> 6h
 vnoremap <S-l> 12l
 "当前页最上，最下，最左，最右
-nnoremap sk <S-h>
-nnoremap sj <S-l>
-nnoremap sh ^
-nnoremap sl $
-vnoremap sk <S-h>
-vnoremap sj <S-l>
-vnoremap sh ^
-vnoremap sl $
+nnoremap <leader>k <S-h>
+nnoremap <leader>j <S-l>
+nnoremap <leader>h ^
+nnoremap <leader>l $
+vnoremap <leader>k <S-h>
+vnoremap <leader>j <S-l>
+vnoremap <leader>h ^
+vnoremap <leader>l $
 "插入模式下的简单移动
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
@@ -40,6 +43,8 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-j> <C-W>j
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+"括号之间的移动
+nnoremap <leader>[ %
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑
@@ -62,6 +67,7 @@ nnoremap <C-p> "+P
 nnoremap <C-P> "+p
 cnoremap <C-p> <C-R>+
 cnoremap <C-P> <C-R>+
+inoremap <C-p> i<BS><Esc>"+pa
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文件和窗口操作
@@ -69,7 +75,7 @@ cnoremap <C-P> <C-R>+
 "打开历史文件列表
 nnoremap fb :BufExplorer<CR>
 "新建一个文件
-nnoremap ff :new<CR>
+nnoremap ff :badd<CR>
 "跳到上一个/下一个历史文件
 nnoremap fn :bn<CR>
 nnoremap fp :bp<CR>
@@ -78,7 +84,7 @@ nnoremap <S-TAB> :bp<CR>
 "分割窗口, 退出窗口
 nnoremap fs :sp<CR>
 nnoremap fv :vsp<CR>
-nnoremap fq :q<CR>
+nnoremap fq :bdel<CR>
 "目录列表和函数标签
 nnoremap fl :NERDTreeToggle %<CR>
 nnoremap fh :Tlist %<CR>
@@ -90,6 +96,11 @@ nnoremap tn :tabnext<CR>
 nnoremap <C-t> :tabnext<CR>
 nnoremap tp :tabprev<CR>
 nnoremap T :tabprev<CR>
+"窗口退出
+nnoremap qk <C-w>k:q<CR>
+nnoremap qj <C-w>j:q<CR>
+nnoremap qh <C-w>h:q<CR>
+nnoremap ql <C-w>l:q<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 跳转
