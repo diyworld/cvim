@@ -3,7 +3,7 @@
 " other
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "设置 leader 键
-let mapleader = ";"
+let mapleader = "\<space>"
 "移除 ^M
 "nnoremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>'tzt'm
@@ -87,7 +87,7 @@ nnoremap fv :vsp<CR>
 nnoremap fq :bdel<CR>
 "目录列表和函数标签
 nnoremap fl :NERDTreeToggle %<CR>
-nnoremap fh :Tlist %<CR>
+nnoremap fh :Tlist<CR>
 "标签页管理
 nnoremap tw :tabnew<CR>
 nnoremap tc :tabclose<CR>
@@ -96,6 +96,9 @@ nnoremap tn :tabnext<CR>
 nnoremap <C-t> :tabnext<CR>
 nnoremap tp :tabprev<CR>
 nnoremap T :tabprev<CR>
+"窗口大小调整
+nnoremap < <C-w>5>
+nnoremap > <C-w>5<
 "窗口退出
 nnoremap qk <C-w>k:q<CR>
 nnoremap qj <C-w>j:q<CR>

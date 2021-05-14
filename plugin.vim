@@ -51,6 +51,10 @@ let g:bufExplorerSortBy='number'     " Sort by number.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mark
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " bling/vim-bufferline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:bufferline_echo = 0
@@ -131,48 +135,24 @@ let g:ctrlp_max_height = 15
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 弹出窗口
-noremap WL <Esc>:NERDTreeToggle %<CR>
-noremap WH <Esc>:Tlist<CR>
-noremap WJ <Esc>:copen<CR>
-"noremap Wk <Esc>:BufExplorerHorizontalSplit<CR>
-noremap WK <Esc>:BufExplorer<CR>
-
-" 退出窗口
-noremap QJ <Esc><C-w>j<Esc>:q<CR>
-noremap QK <Esc><C-w>k<Esc>:q<CR>
-noremap QH <Esc><C-w>h<Esc>:q<CR>
-noremap QL <Esc><C-w>l<Esc>:q<CR>
-noremap QQ <Esc>:q<CR>
-
-" 调整窗口大小
-noremap W> <Esc><C-w>30<
-noremap W< <Esc><C-w>30>
-noremap W+ <Esc><C-w>15+
-noremap W- <Esc><C-w>15-
-
-" 光标移动
-noremap <space> <Esc>
-noremap <space><space> <Esc>
 
 " 括号间的跳转
-noremap <space>] <Esc>%
-noremap <space>[ <Esc>%%
+nnoremap <space>] <Esc>%
+nnoremap <space>[ <Esc>%%
 
 "查询映射
-noremap ss <Esc>:cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-noremap sg <Esc>:cs find g <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-noremap sc <Esc>:cs find c <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-noremap st <Esc>:cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-noremap sf <Esc>:cs find f <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap ss <Esc>:cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap sg <Esc>:cs find g <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap sc <Esc>:cs find c <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap st <Esc>:cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap sf <Esc>:cs find f <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
 
 "高亮
-",m - 高亮, 或取消当前高亮
-",n - 跳转下一个高亮处
-",p - 跳转上一个高亮处
-",c - 取消所有高亮
-noremap gs <Esc>gd<C-o>
-noremap <space><cr> <Esc>:noh<cr>
+"<leader>m - 高亮, 或取消当前高亮
+"<leader>n - 跳转下一个高亮处
+"<leader>p - 跳转上一个高亮处
+"<leader>c - 取消所有高亮
+nnoremap <leader><cr> <Esc>:noh<cr>
 
 " 字符标记
 "vnoremap <silent> MM :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR><C-O>
