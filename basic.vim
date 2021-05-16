@@ -3,10 +3,10 @@
 " 窗口基本风格
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "高亮光标所在的行/列
-set cursorline
-set cursorcolumn
-highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+"set cursorline
+"set cursorcolumn
+"highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+"highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
 
 "去除vi一致性
 set nocompatible
@@ -20,13 +20,11 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-"主题默认
-"colorscheme default
-"colorscheme desert
+"主题
 if (g:system == 'window')
     colorscheme morning
 else
-    colorscheme default
+    colorscheme desert
 endif
 "背景色
 "set background=dark
@@ -160,6 +158,8 @@ set laststatus=2
 "格式化状态行
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+"隐藏buffer, 这样在文件已经有修改时也可以切换不同的 buffer文件
+set hidden
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 函数体

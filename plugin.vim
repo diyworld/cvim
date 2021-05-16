@@ -6,8 +6,8 @@ if (g:system == 'window')
     Plug 'jlanzarotta/bufexplorer'
     Plug 'vim-scripts/mark'
     Plug 'bling/vim-bufferline'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
     "Plug 'vim-scripts/taglist.vim'
     call plug#end()
 else
@@ -17,8 +17,8 @@ else
     Plug 'jlanzarotta/bufexplorer'
     Plug 'vim-scripts/mark'
     Plug 'bling/vim-bufferline'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/taglist.vim'
     call plug#end()
 endif
@@ -62,18 +62,25 @@ let g:bufferline_rotate = 0
 let g:bufferline_fixed_index = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" lightline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:lightline.colorscheme = 'default'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline/vim-airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_inactive_collapse=0
+let g:airline_theme='dark'
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline/vim-airline-themes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='fruit_punch'
-let g:airline_minimalist_showmod = 1
-let g:airline_molokai_bright = 1
+"let g:airline_theme='fruit_punch'
+"let g:airline_minimalist_showmod = 1
+"let g:airline_molokai_bright = 1
 "let g:airline_statusline_ontop = 1     "强制状态行在最上面显示
 "set stl=%!airline#check_mode(winnr())  "禁止tab标签功能, 否则域状态行冲突
 "let g:airline#extensions#tabline#enabled=1
