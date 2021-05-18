@@ -59,7 +59,7 @@ nnoremap <leader>[ %
 nnoremap U <C-r>
 "y/yy时多复制一份到系统寄存器
 vnoremap y "+y
-nnoremap yy V"+y
+"nnoremap yy V"+y
 "粘贴
 vnoremap <C-p> "+p
 vnoremap <C-P> "+P
