@@ -144,8 +144,8 @@ let g:ctrlp_max_height = 15
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 括号间的跳转
-nnoremap <space>] <Esc>%
-nnoremap <space>[ <Esc>%%
+nnoremap <Space>] <Esc>%
+nnoremap <Space>[ <Esc>%%
 
 "查询映射
 nnoremap ss <Esc>:cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
@@ -159,14 +159,6 @@ nnoremap sf <Esc>:cs find f <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
 "<leader>n - 跳转下一个高亮处
 "<leader>p - 跳转上一个高亮处
 "<leader>c - 取消所有高亮
-nnoremap <leader><cr> <Esc>:noh<cr>
-
-" 字符标记
-"vnoremap <silent> MM :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR><C-O>
-"map Mm <leader>m
-"map Mn *
-"map Mp #
-"map Mc <leader>n
-
+nnoremap <Space><cr> <Esc>:noh<cr>
 
 

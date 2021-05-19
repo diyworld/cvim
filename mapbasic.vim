@@ -3,7 +3,8 @@
 " other
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "设置 leader 键
-let mapleader = "\<space>"
+"let mapleader = "\<space>"
+let mapleader = ","
 "移除 ^M
 "nnoremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>'tzt'm
@@ -25,14 +26,14 @@ vnoremap <S-j> 8j
 vnoremap <S-h> 6h
 vnoremap <S-l> 12l
 "当前页最上，最下，最左，最右
-nnoremap <leader>k <S-h>
-nnoremap <leader>j <S-l>
-nnoremap <leader>h ^
-nnoremap <leader>l $
-vnoremap <leader>k <S-h>
-vnoremap <leader>j <S-l>
-vnoremap <leader>h ^
-vnoremap <leader>l $
+nnoremap <Space>k <S-h>
+nnoremap <Space>j <S-l>
+nnoremap <Space>h ^
+nnoremap <Space>l $
+vnoremap <Space>k <S-h>
+vnoremap <Space>j <S-l>
+vnoremap <Space>h ^
+vnoremap <Space>l $
 "插入模式下的简单移动
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
@@ -44,7 +45,7 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 "括号之间的移动
-nnoremap <leader>[ %
+nnoremap <Space>[ %
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑
