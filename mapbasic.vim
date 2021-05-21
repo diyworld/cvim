@@ -119,7 +119,7 @@ nnoremap <C-i> <TAB>
 "创建空白文件
 function! s:cvim_create_new_file()
     let tmpdir = g:cvimroot . '/tmp'
-    let new_file = tmpdir . '/New' . strftime('%Y%m%d%H%M%S') . '.ctx'
+    let new_file = tmpdir . '/new' . strftime('%Y%m%d%H%M%S') . '.ctx'
     exe "badd" new_file
     exe "b" new_file
 endfunction
