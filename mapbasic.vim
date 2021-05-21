@@ -76,7 +76,8 @@ inoremap <C-p> i<BS><Esc>"+pa
 "打开历史文件列表
 nnoremap fb :BufExplorer<CR>
 "新建一个文件
-nnoremap ff :badd<CR>
+"nnoremap ff :badd s:cvim_create_new_file()<CR>
+nnoremap ff :call <sid>cvim_create_new_file()<CR>
 "跳到上一个/下一个历史文件
 nnoremap fn :bn<CR>
 nnoremap fp :bp<CR>
@@ -111,4 +112,15 @@ nnoremap ql <C-w>l:q<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "回跳，与 <Ctrl-o>对应
 nnoremap <C-i> <TAB>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 函数
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"创建空白文件
+function! s:cvim_create_new_file()
+    let tmpdir = g:cvimroot . '/tmp'
+    let new_file = tmpdir . '/New' . strftime('%Y%m%d%H%M%S') . '.ctx'
+    exe "badd" new_file
+    exe "b" new_file
+endfunction
 

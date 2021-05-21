@@ -1,22 +1,21 @@
 " Vim with all enhancements
-
-let g:islinux = 1
-let g:iswindow = 0
+let $CVIMROOT = ''
+let g:cvimroot = ''
 let g:system = 'other'
 if (has("win32") || has("win64") || has("win95") || has("win16"))
-    let g:islinux = 0
-    let g:iswindow = 1
     let g:system = 'window'
+    let $CVIMROOT = $VIMRUNTIME . "\\..\\cvim"
+    let g:cvimroot = $VIMRUNTIME . "\\..\\cvim"
     source $VIMRUNTIME/../cvim/basic.vim
     source $VIMRUNTIME/../cvim/mapbasic.vim
     source $VIMRUNTIME/../cvim/plugin.vim
 else
-    let g:islinux = 1
-    let g:iswindow = 0
     let g:system = 'linux'
-    source ~/.vim/cvim/basic.vim 
-    source ~/.vim/cvim/mapbasic.vim 
-    source ~/.vim/cvim/plugin.vim 
+    let $CVIMROOT = "~/.vim/cvim"
+    let g:cvimroot = "~/.vim/cvim"
+    source "~/.vim/cvim/basic.vim"
+    source "~/.vim/cvim/mapbasic.vim"
+    source "~/.vim/cvim/plugin.vim"
 endif
 
 " Use the internal diff if available.
