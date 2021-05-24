@@ -3,8 +3,7 @@
 " other
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "设置 leader 键
-"let mapleader = "\<space>"
-let mapleader = ","
+let mapleader = "\\"
 "移除 ^M
 "nnoremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>'tzt'm
@@ -51,21 +50,27 @@ nnoremap <Space>[ %
 " 文本编辑
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "插入模式下快速退出到Normal模式
-"inoremap <TAB> <Esc>
-"nnoremap <TAB> <Esc>
-"cnoremap <TAB> <Esc>
-"vnoremap <TAB> <Esc>
-
+inoremap <C-i> <Esc>
+nnoremap <C-i> <Esc>
+cnoremap <C-i> <Esc>
+vnoremap <C-i> <Esc>
+"全选
+vnoremap a <Esc>ggVG
 "取消撤销操作
 nnoremap U <C-r>
 "y/yy时多复制一份到系统寄存器
 vnoremap y "+y
-"nnoremap yy V"+y
-"粘贴
-vnoremap <C-p> "+p
-vnoremap <C-P> "+P
-nnoremap <C-p> "+P
-nnoremap <C-P> "+p
+nnoremap yy V"+y
+"剪切
+vnoremap x "+ygvd
+"单词复制和删除
+nnoremap yw "+yaw
+nnoremap dw daw
+"粘贴固定使用系统寄存器
+vnoremap p "+p
+vnoremap P "+P
+nnoremap p "+p
+nnoremap P "+P
 cnoremap <C-p> <C-R>+
 cnoremap <C-P> <C-R>+
 inoremap <C-p> i<BS><Esc>"+pa
@@ -81,8 +86,6 @@ nnoremap ff :call <sid>cvim_create_new_file()<CR>
 "跳到上一个/下一个历史文件
 nnoremap fn :bn<CR>
 nnoremap fp :bp<CR>
-nnoremap <TAB> :bn<CR>
-nnoremap <S-TAB> :bp<CR>
 "分割窗口, 退出窗口
 nnoremap fs :sp<CR>
 nnoremap fv :vsp<CR>

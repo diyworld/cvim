@@ -152,6 +152,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "使能反白连续缩进
 xnoremap <  <gv
 xnoremap >  >gv
+"大小写转换
+xnoremap U  Ugv
+xnoremap u  ugv
 
 "总是显示状态行
 set laststatus=2

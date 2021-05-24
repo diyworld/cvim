@@ -13,9 +13,9 @@ else
     let g:system = 'linux'
     let $CVIMROOT = "~/.vim/cvim"
     let g:cvimroot = "~/.vim/cvim"
-    source "~/.vim/cvim/basic.vim"
-    source "~/.vim/cvim/mapbasic.vim"
-    source "~/.vim/cvim/plugin.vim"
+    source ~/.vim/cvim/basic.vim
+    source ~/.vim/cvim/mapbasic.vim
+    source ~/.vim/cvim/plugin.vim
 endif
 
 " Use the internal diff if available.
