@@ -5,8 +5,7 @@
 "设置 leader 键
 let mapleader = "\\"
 "移除 ^M
-"nnoremap <leader>tc  mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>'tzt'm
+nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>
 "文档转换为 unix格式
 nnoremap <leader>tu :set fileformat=unix
 "新增一行空白行
