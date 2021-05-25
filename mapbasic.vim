@@ -67,10 +67,10 @@ vnoremap x "+ygvd
 nnoremap yw "+yaw
 nnoremap dw daw
 "粘贴固定使用系统寄存器
-vnoremap p "+p
-vnoremap P "+P
-nnoremap p "+p
-nnoremap P "+P
+vnoremap <C-p> "+p
+vnoremap <C-P> "+P
+nnoremap <C-p> "+p
+nnoremap <C-P> "+P
 cnoremap <C-p> <C-R>+
 cnoremap <C-P> <C-R>+
 inoremap <C-p> i<BS><Esc>"+pa
@@ -109,6 +109,7 @@ nnoremap qk <C-w>k:q<CR>
 nnoremap qj <C-w>j:q<CR>
 nnoremap qh <C-w>h:q<CR>
 nnoremap ql <C-w>l:q<CR>
+nnoremap qq :q<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 跳转
