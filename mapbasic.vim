@@ -15,14 +15,14 @@ nnoremap <leader>o oi<BS><Esc>
 " 光标移动
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "多行, 多字符移动
-nnoremap <S-k> 4k
-nnoremap <S-j> 8j
-nnoremap <S-h> 6h
-nnoremap <S-l> 12l
-vnoremap <S-k> 4k
-vnoremap <S-j> 8j
-vnoremap <S-h> 6h
-vnoremap <S-l> 12l
+nnoremap <S-k> 8k
+nnoremap <S-j> 4j
+nnoremap <S-h> 16h
+nnoremap <S-l> 8l
+vnoremap <S-k> 8k
+vnoremap <S-j> 4j
+vnoremap <S-h> 16h
+vnoremap <S-l> 8l
 "当前页最上，最下，最左，最右
 nnoremap <Space>k <S-h>
 nnoremap <Space>j <S-l>
@@ -49,10 +49,10 @@ nnoremap <Space>[ %
 " 文本编辑
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "插入模式下快速退出到Normal模式
-inoremap <C-i> <Esc>
-nnoremap <C-i> <Esc>
-cnoremap <C-i> <Esc>
-vnoremap <C-i> <Esc>
+"inoremap <C-i> <Esc>
+"nnoremap <C-i> <Esc>
+"cnoremap <C-i> <Esc>
+"vnoremap <C-i> <Esc>
 "全选
 vnoremap a <Esc>ggVG
 "取消撤销操作
