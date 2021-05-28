@@ -5,9 +5,9 @@
 "设置 leader 键
 let mapleader = "\\"
 "移除 ^M
-nnoremap <leader>tc :%s/<C-V><cr>//ge<cr>
+nnoremap <leader>tc :%s/<C-V><CR>//ge<CR>
 "文档转换为 unix格式
-nnoremap <leader>tu :set fileformat=unix
+nnoremap <leader>tu :set fileformat=unix<CR>
 "新增一行空白行
 nnoremap <leader>o oi<BS><Esc>
 
@@ -24,14 +24,14 @@ vnoremap <S-j> 4j
 vnoremap <S-h> 16h
 vnoremap <S-l> 8l
 "当前页最上，最下，最左，最右
-nnoremap <Space>k <S-h>
-nnoremap <Space>j <S-l>
-nnoremap <Space>h ^
-nnoremap <Space>l $
-vnoremap <Space>k <S-h>
-vnoremap <Space>j <S-l>
-vnoremap <Space>h ^
-vnoremap <Space>l $
+nnoremap gk <S-h>
+nnoremap gj <S-l>
+nnoremap gh ^
+nnoremap gl $
+vnoremap gk <S-h>
+vnoremap gj <S-l>
+vnoremap gh ^
+vnoremap gl $
 "插入模式下的简单移动
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
