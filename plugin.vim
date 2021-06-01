@@ -9,6 +9,7 @@ if (g:system == 'window')
     Plug 'junegunn/fzf'
     "Plug 'vim-airline/vim-airline'
     "Plug 'vim-airline/vim-airline-themes'
+    "taglist 需要 ctags 支持
     "Plug 'vim-scripts/taglist.vim'
     call plug#end()
 else

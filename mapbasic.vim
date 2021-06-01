@@ -5,63 +5,54 @@
 "设置 leader 键
 let mapleader = "\\"
 ""移除 ^M
-"nnoremap <leader>tc :%s/<C-V><CR>//ge<CR>
+"nnoremap <leader>fc :%s/<C-V><CR>//ge<CR>
 ""文档转换为 unix格式
-"nnoremap <leader>tu :set fileformat=unix<CR>
-""新增一行空白行
-"nnoremap <leader>o oi<BS><Esc>
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 光标移动
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""多行, 多字符移动
-nnoremap <S-k> 8k
-nnoremap <S-j> 4j
-nnoremap <S-h> 16h
-nnoremap <S-l> 8l
-vnoremap <S-k> 8k
-vnoremap <S-j> 4j
-vnoremap <S-h> 16h
-vnoremap <S-l> 8l
-""当前页最上，最下，最左，最右
-nnoremap gk <S-h>
-nnoremap gj <S-l>
-nnoremap gh ^
-nnoremap gl $
-nnoremap gm gM
-vnoremap gk <S-h>
-vnoremap gj <S-l>
-vnoremap gh ^
-vnoremap gl $
-vnoremap gm gM
-"插入模式下的简单移动
-inoremap <C-k> <Up>
-inoremap <C-j> <Down>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+"nnoremap <leader>fu :set fileformat=unix<CR>
+nnoremap <leader>ff :%s/<C-V><CR>//ge<CR>:set fileformat=unix<CR>
+"新增一行空白行，如果是折叠行则功能为展开折叠或闭合折叠
+nnoremap <CR> o<Esc>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 光标移动
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"多行, 多字符移动
+noremap <S-k> 8k
+noremap <S-j> 4j
+noremap <S-h> 16h
+noremap <S-l> 8l
+"当前页最上，最下，最左，最右
+noremap <space>k <S-h>
+noremap <space>j <S-l>
+noremap <space>h ^
+noremap <space>l $
+noremap <space>m gM
+"插入模式和命令行模式下的简单移动
+noremap! <C-k> <Up>
+noremap! <C-j> <Down>
+noremap! <C-h> <Left>
+noremap! <C-l> <Right>
 "窗口间移动
-nnoremap <C-k> <C-W>k
-nnoremap <C-j> <C-W>j
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-""括号之间的移动
-"nnoremap <Space>[ %
-"
+noremap <C-k> <C-W>k
+noremap <C-j> <C-W>j
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+"括号之间的移动
+"nnoremap <space>[ %
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "全选
 vnoremap a <Esc>ggVG
 "取消撤销操作
-nnoremap U <C-r>
-"y/yy时复制到系统寄存器
-vnoremap y "+y
+noremap U <C-r>
+"复制粘贴
+noremap  y  "+y
 nnoremap yy "+Y
-"剪切
-vnoremap x "+ygvd
-"粘贴固定使用系统寄存器
-nnoremap p "+p
-nnoremap P "+P
+noremap  p  "+p
+noremap  P  "+P
+vnoremap x  "+x
+"模式删除单词
+noremap! <C-BS> <C-w>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 文件和窗口操作
@@ -117,6 +108,12 @@ nnoremap <Space><cr> <Esc>:noh<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "创建空白文件
 function! s:cvim_create_new_file()
+    let tmpdir = g:cvimroot . '/tmp'
+    let new_file = tmpdir . '/new' . strftime('%Y%m%d%H%M%S') . '.ctx'
+    exe "badd" new_file
+    exe "b" new_file
+endfunction
+function! s:copy_from_insight()
     let tmpdir = g:cvimroot . '/tmp'
     let new_file = tmpdir . '/new' . strftime('%Y%m%d%H%M%S') . '.ctx'
     exe "badd" new_file
