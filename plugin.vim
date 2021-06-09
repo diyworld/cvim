@@ -49,7 +49,8 @@ let Tlist_WinWidth = 30          " taglist窗口的宽度
 " BufExplorer 缓冲文件列表
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
-let g:bufExplorerSortBy='number'     " Sort by number.
+"let g:bufExplorerSortBy='number'     " Sort by number.
+let g:bufExplorerSortBy='mru'        " Sort by most recently used.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

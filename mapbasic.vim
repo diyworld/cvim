@@ -4,20 +4,23 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "设置 leader 键
 let mapleader = "\\"
-""移除 ^M
-"nnoremap <leader>fc :%s/<C-V><CR>//ge<CR>
-""文档转换为 unix格式
-"nnoremap <leader>fu :set fileformat=unix<CR>
+"移除 ^M
+nnoremap <leader>fc :%s/<C-V><CR>//ge<CR>
+"文档转换为 unix格式
+nnoremap <leader>fu :set fileformat=unix<CR>
 nnoremap <leader>ff :%s/<C-V><CR>//ge<CR>:set fileformat=unix<CR>
-"新增一行空白行，如果是折叠行则功能为展开折叠或闭合折叠
-nnoremap <CR> o<Esc>
+"回车键用于输入指令
+"代码块展开和关闭使用 Ctrl+CR
+"noremap <CR> :
+"tab字符替换为4个空格
+noremap ts :%s/\t/    /g<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 光标移动
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "多行, 多字符移动
-noremap <S-k> 8k
-noremap <S-j> 4j
-noremap <S-h> 16h
+noremap <S-k> 5k
+noremap <S-j> 5j
+noremap <S-h> 8h
 noremap <S-l> 8l
 "当前页最上，最下，最左，最右
 noremap <space>k <S-h>
@@ -68,9 +71,9 @@ nnoremap fp :bp<CR>
 "nnoremap fs :sp<CR>
 "nnoremap fv :vsp<CR>
 "nnoremap fq :bdel<CR>
-""目录列表和函数标签
-"nnoremap fl :NERDTreeToggle %<CR>
-"nnoremap fh :Tlist<CR>
+"目录列表和函数标签
+nnoremap fl :NERDTreeToggle %<CR>
+nnoremap fh :Tlist<CR>
 ""标签页管理
 "nnoremap tw :tabnew<CR>
 "nnoremap tc :tabclose<CR>
