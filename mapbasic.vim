@@ -1,21 +1,28 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" other
+" other and try
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "设置 leader 键
 let mapleader = "\\"
+
 "移除 ^M
 nnoremap <leader>fc :%s/<C-V><CR>//ge<CR>
 "文档转换为 unix格式
 nnoremap <leader>fu :set fileformat=unix<CR>
 nnoremap <leader>ff :%s/<C-V><CR>//ge<CR>:set fileformat=unix<CR>
-"回车键用于输入指令
-"代码块展开和关闭使用 Ctrl+CR
-"noremap <CR> :
+
 "tab字符替换为4个空格
 noremap <space>ts :%s/\t/    /g<CR>
 "删除每行末尾空格
 noremap <space>ds :%s/\s\+$//
+
+"I模式退出到N
+noremap! <C-CR> <Esc>
+"C模式退出到N
+cnoremap <C-CR> <Esc>
+"N模式新增空行
+nnoremap <C-CR> <Esc>o<Esc>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 光标移动
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
