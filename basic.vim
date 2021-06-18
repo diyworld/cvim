@@ -123,7 +123,7 @@ set nowb
 set noswapfile
 
 "缩进, 使用空格替换tab
-"set expandtab
+set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4

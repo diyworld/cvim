@@ -13,7 +13,9 @@ nnoremap <leader>ff :%s/<C-V><CR>//ge<CR>:set fileformat=unix<CR>
 "代码块展开和关闭使用 Ctrl+CR
 "noremap <CR> :
 "tab字符替换为4个空格
-noremap ts :%s/\t/    /g<CR>
+noremap <space>ts :%s/\t/    /g<CR>
+"删除每行末尾空格
+noremap <space>ds :%s/\s\+$//
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 光标移动
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -53,6 +55,7 @@ noremap  y  "+y
 nnoremap yy "+Y
 noremap  p  "+p
 noremap  P  "+P
+cnoremap <C-P> <C-r>+
 vnoremap x  "+x
 "模式删除单词
 noremap! <C-BS> <C-w>
