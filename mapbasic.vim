@@ -26,27 +26,21 @@ nnoremap <C-CR> <Esc>o<Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 光标移动
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"多行, 多字符移动
+"多行多字符移动
 noremap <S-k> 5k
 noremap <S-j> 5j
 noremap <S-h> 8h
 noremap <S-l> 8l
 "当前页最上，最下，最左，最右
-noremap <space>k <S-h>
-noremap <space>j <S-l>
-noremap <space>h ^
-noremap <space>l $
-noremap <space>m gM
+noremap <Space>k <S-h>
+noremap <Space>j <S-l>
+noremap <Space>h 0
+noremap <Space>l $
 "插入模式和命令行模式下的简单移动
 noremap! <C-k> <Up>
 noremap! <C-j> <Down>
 noremap! <C-h> <Left>
 noremap! <C-l> <Right>
-"窗口间移动
-noremap <C-k> <C-W>k
-noremap <C-j> <C-W>j
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
 "括号之间的移动
 "nnoremap <space>[ %
 
@@ -67,31 +61,31 @@ vnoremap x  "+x
 "模式删除单词
 noremap! <C-BS> <C-w>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 文件和窗口操作
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""打开历史文件列表
-nnoremap fb :BufExplorer<CR>
-""新建一个文件
-nnoremap ff :call <sid>cvim_create_new_file()<CR>
-""跳到上一个/下一个历史文件
-nnoremap fn :bn<CR>
-nnoremap fp :bp<CR>
-""分割窗口, 退出窗口
-"nnoremap fs :sp<CR>
-"nnoremap fv :vsp<CR>
-"nnoremap fq :bdel<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 文件和窗口操作
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"打开历史文件列表
+nnoremap <Space>be :BufExplorer<CR>
+"新建一个文件
+nnoremap <Space>ba :call <sid>cvim_create_new_file()<CR>
+"跳到上一个/下一个历史文件
+nnoremap <Space>bn :bn<CR>
+nnoremap <Space>bp :bp<CR>
+"分割窗口, 退出窗口
+nnoremap <Space>bs :sp<CR>
+nnoremap <Space>bv :vsp<CR>
+nnoremap <Space>bd :bdel<CR>
+
 "目录列表和函数标签
-nnoremap fl :NERDTreeToggle %<CR>
-nnoremap fh :Tlist<CR>
-""标签页管理
-"nnoremap tw :tabnew<CR>
-"nnoremap tc :tabclose<CR>
-"nnoremap tt :tab vsplit<CR>
-"nnoremap tn :tabnext<CR>
-"nnoremap <C-t> :tabnext<CR>
-"nnoremap tp :tabprev<CR>
-"nnoremap T :tabprev<CR>
+nnoremap <Space>wl :NERDTreeToggle %<CR>
+nnoremap <Space>wh :Tlist<CR>
+nnoremap <Space>wj :copen<CR>
+nnoremap <Space>wk :BufExplorer<CR>
+"窗口间移动
+noremap <C-k> <C-W>k
+noremap <C-j> <C-W>j
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 "窗口大小调整
 nnoremap < <C-W>5<
 nnoremap > <C-W>5>
