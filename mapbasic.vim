@@ -29,8 +29,8 @@ nnoremap <C-CR> <Esc>o<Esc>
 "多行多字符移动
 noremap <S-k> 5k
 noremap <S-j> 5j
-noremap <S-h> 8h
-noremap <S-l> 8l
+noremap <S-h> 10h
+noremap <S-l> 10l
 "当前页最上，最下，最左，最右
 noremap <Space>k <S-h>
 noremap <Space>j <S-l>
@@ -41,9 +41,6 @@ noremap! <C-k> <Up>
 noremap! <C-j> <Down>
 noremap! <C-h> <Left>
 noremap! <C-l> <Right>
-"括号之间的移动
-"nnoremap <space>[ %
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,12 +112,6 @@ nnoremap <Space><cr> <Esc>:noh<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "创建空白文件
 function! s:cvim_create_new_file()
-    let tmpdir = g:cvimroot . '/tmp'
-    let new_file = tmpdir . '/new' . strftime('%Y%m%d%H%M%S') . '.ctx'
-    exe "badd" new_file
-    exe "b" new_file
-endfunction
-function! s:copy_from_insight()
     let tmpdir = g:cvimroot . '/tmp'
     let new_file = tmpdir . '/new' . strftime('%Y%m%d%H%M%S') . '.ctx'
     exe "badd" new_file
