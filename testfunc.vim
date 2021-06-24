@@ -47,3 +47,20 @@ function! s:cvim_next_pos(str)
     "echo l:pos
     call setpos('.', l:pos)
 endfunction
+
+function! s:cvim_buffer_enter_event(type)
+"    let l:fullname = getreg('%')
+"    let l:len = strlen(l:fullname)
+"    if l:len < 9
+"        return
+"    endif
+"    let l:matchidx = match(l:fullname, '.terminal', l:len - 9)
+"    if l:matchidx > -1
+"        "进入到 terminal 文件
+"        let s:cvim_terminal_file_cur == l:fullname
+"        call cvim_createload_terminal_file('load')
+"    endif
+    let l:fullname = getreg('%')
+    let s:cvim_terminal_file_cur = l:fullname
+    call <sid>cvim_createload_terminal_file('load')
+endfunction

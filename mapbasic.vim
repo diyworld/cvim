@@ -77,7 +77,7 @@ nnoremap <Space>bd :bdel<CR>
 nnoremap <Space>wl :NERDTreeToggle %<CR>
 nnoremap <Space>wh :Tlist<CR>
 nnoremap <Space>wj :copen<CR>
-nnoremap <Space>wk :BufExplorer<CR>
+nnoremap <Space>wk :call <sid>cvim_buffer_status_event("create")<CR>
 "窗口间移动
 noremap <C-k> <C-W>k
 noremap <C-j> <C-W>j
@@ -108,7 +108,7 @@ vnoremap <silent> gd :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 nnoremap <Space><cr> <Esc>:noh<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 函数
+" 空白文件
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "创建空白文件
 function! s:cvim_create_new_file()
@@ -118,10 +118,72 @@ function! s:cvim_create_new_file()
     exe "b" new_file
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" terminal 文件
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" buffer 在窗口显示之后调用
+autocmd BufEnter *.terminal call <sid>cvim_buffer_status_event("enter")
+" buffer 离开一个窗口之前调用
+autocmd BufLeave *.terminal call <sid>cvim_buffer_status_event("leave")
+"删除 buffer 时自动调用事件
+"autocmd BufDelete *.terminal call <sid>cvim_buffer_status_event("delete")
+
+"激活的 terminal 文件列表
+"let s:cvim_terminal_file_list = []
+"当前、最后一个操作的 terminal 文件全路径名称
+let s:cvim_terminal_file_last = ""
+let s:cvim_terminal_file_cur  = ""
+"当前是否处于 terminal 文件标志位
+let s:cvim_isin_terminal_file = v:false
+
+"buffer事件 type = ['create', 'enter', 'leave', 'delete']
+function! s:cvim_buffer_status_event(type)
+    let l:terminal_file = ""
+    "创建文件
+    if a:type == 'create'
+        let l:tmpdir = g:cvimroot . '/tmp/terminal_buffer'
+        let l:terminal_file = l:tmpdir . '/term' . strftime('%Y%m%d%H%M%S') . '.terminal'
+        exe "badd" l:terminal_file
+        exe "b" l:terminal_file
+        "TODO
+        "N模式重映射 <CR> 功能键
+        "I模式重映射 <CR>/<Esc> 功能键
+        "添加该文件到terminal文件列表中
+        let s:cvim_isin_terminal_file = v:true
+    elseif a:type == 'enter'
+        let l:terminal_file = getreg('%')
+        "TODO
+        "N模式重映射 <CR> 功能键
+        "I模式重映射 <CR>/<Esc> 功能键
+        let s:cvim_isin_terminal_file = v:true
+    elseif a:type == 'leave'
+        let l:terminal_file = s:cvim_terminal_file_cur
+        "TODO
+        "N模式恢复 <CR> 功能键
+        "I模式恢复 <CR>/<Esc> 功能键
+        let s:cvim_isin_terminal_file = v:false
+    elseif a:type == 'delete'
+        "TODO
+        "从terminal文件列表中删除该文件
+    endif
+
+    "记录当前编辑的 terminal 文件
+    if l:terminal_file != ""
+        let s:cvim_terminal_file_cur = l:terminal_file
+    endif
+    "call <sid>cvim_create_or_load_terminal_file(a:type)
+    echo "cvim_buffer_status_event" . ' ' . a:type
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 选择高亮
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"模拟执行按键，如 gg/G/dd 等
 function! CmdLine(str)
     call feedkeys(":" . a:str)
 endfunction 
 
+"选择
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
     execute "normal! vgvy"
