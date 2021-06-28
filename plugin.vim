@@ -130,7 +130,7 @@ set cscopeprg=gtags-cscope
 " 匹配cscope的搜索项
 set cscopequickfix=g-,s-,c-,d-,i-,t-,e-
 " 写入操作时，自动更新 GTAGS
-au BufWritePost *.[ch] call UpdateGtags(expand('<afile>'))
+auto BufWritePost *.[ch] call UpdateGtags(expand('<afile>'))
 
 " 根据文件路径向上查找工程目录并添加GTAGS
 call FindProjectPath()

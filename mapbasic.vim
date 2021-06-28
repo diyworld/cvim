@@ -44,50 +44,59 @@ noremap! <C-l> <Right>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"全选
+"全选 va
 vnoremap a <Esc>ggVG
 "取消撤销操作
-noremap U <C-r>
+noremap  U <C-r>
 "复制粘贴
 noremap  y  "+y
 nnoremap yy "+Y
+noremap  Y  "+Y
 noremap  p  "+p
 noremap  P  "+P
 cnoremap <C-P> <C-r>+
 vnoremap x  "+x
-"模式删除单词
-noremap! <C-BS> <C-w>
+"命令模式删除单词
+noremap! <C-Backspace> <C-w>
+inoremap <C-Backspace> <C-w>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 文件和窗口操作
+" 文件操作
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "打开历史文件列表
-nnoremap <Space>be :BufExplorer<CR>
+nnoremap 2e :BufExplorer<CR>
 "新建一个文件
-nnoremap <Space>ba :call <sid>cvim_create_new_file()<CR>
+nnoremap 2a :call <sid>cvim_create_new_file()<CR>
 "跳到上一个/下一个历史文件
-nnoremap <Space>bn :bn<CR>
-nnoremap <Space>bp :bp<CR>
+nnoremap 2n :bn<CR>
+nnoremap 2p :bp<CR>
 "分割窗口, 退出窗口
-nnoremap <Space>bs :sp<CR>
-nnoremap <Space>bv :vsp<CR>
-nnoremap <Space>bd :bdel<CR>
+nnoremap 2s :sp<CR>
+nnoremap 2v :vsp<CR>
+nnoremap 2d :bdel<CR>
 
-"目录列表和函数标签
-nnoremap <Space>wl :NERDTreeToggle %<CR>
-nnoremap <Space>wh :Tlist<CR>
-nnoremap <Space>wj :copen<CR>
-nnoremap <Space>wk :call <sid>cvim_buffer_status_event("create")<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 窗口操作
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"打开/关闭窗口
+nnoremap 1l :NERDTreeToggle %<CR>
+nnoremap 1h :Tlist<CR>
+nnoremap 1j :copen<CR>
+nnoremap 1k :call <sid>cvim_buffer_status_event("create")<CR>
+
 "窗口间移动
 noremap <C-k> <C-W>k
 noremap <C-j> <C-W>j
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
+
 "窗口大小调整
 nnoremap < <C-W>5<
 nnoremap > <C-W>5>
 nnoremap + <C-W>+
 nnoremap _ <C-W>-
+
 "窗口退出
 nnoremap qk <C-w>k:q<CR>
 nnoremap qj <C-w>j:q<CR>
