@@ -134,6 +134,7 @@ endfunction
 " TODO:
 "   1)目录切换指令还不能用
 "   2)命令的获取方式修改为读取文件最后一行，并提取第一个 '> ' 之后的字符串
+"   3)terminal 文件是否需要做一个缓存大小限制??
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " buffer 在窗口显示之后调用
 autocmd BufEnter *.terminal call Cvim_buffer_status_event("enter")

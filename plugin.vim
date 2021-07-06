@@ -146,17 +146,17 @@ let g:ctrlp_max_height = 15
 " Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" 括号间的跳转
-"nnoremap <Space>] <Esc>%
-"nnoremap <Space>[ <Esc>%%
-"
-""查询映射
-"nnoremap ss <Esc>:cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-"nnoremap sg <Esc>:cs find g <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-"nnoremap sc <Esc>:cs find c <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-"nnoremap st <Esc>:cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-"nnoremap sf <Esc>:cs find f <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
-"
+" 括号间的跳转
+nnoremap <Space>] <Esc>%
+nnoremap <Space>[ <Esc>%%
+
+"查询映射
+nnoremap <leader>s <Esc>:cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap <leader>g <Esc>:cs find g <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap <leader>c <Esc>:cs find c <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap <leader>t <Esc>:cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap <leader>f <Esc>:cs find f <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+
 ""高亮
 ""<leader>m - 高亮, 或取消当前高亮
 ""<leader>n - 跳转下一个高亮处
