@@ -6,6 +6,15 @@
 4）拷贝 plug.vim 到目录 <xxx\Vim\autoload>
 5）bingo
 
+【linux - 安装步骤】
+cd ~/
+git clone git@github.com:diyworld/cvim.git
+mkdir ~/.vim
+cp -r ~/cvim ~/.vim/cvim
+cd ~/.vim/cvim
+cp ./vimrc ~/.vimrc
+TODO: PlugInstall
+
 【文件说明】
 basic.vim 基本配置
 mapbasic.vim 基本映射
